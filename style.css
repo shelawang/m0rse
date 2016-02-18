@@ -16,10 +16,14 @@
     margin-bottom: 1em;
 }
 
-button:focus {
+#theButton:focus {
     outline: none;
 }
 
+#translation {
+    /*TODO surround with a border?*/
+    font-family: monospace;
+}
 
 
 

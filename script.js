@@ -7,7 +7,7 @@ var _channelNeedsUpdate = false;
 var _audioContext = new AudioContext;
 var _oscillator = _audioContext.createOscillator();
 
-_oscillator.frequency.value = 700; //Hz - should be 600-800 acc to ham.stackexchange
+_oscillator.frequency.value = 600; //Hz - should be 600-800 acc to ham.stackexchange
 _oscillator.connect(_audioContext.destination);
 _oscillator.disconnect();
 _oscillator.start();
@@ -46,12 +46,17 @@ function channelChanged() {
     _channelNeedsUpdate = true;
 }
 
+function getValueOfElementFromForm(element, form) {
+    var form = document.getElementById(form);
+    var val = form.elements[element].value;
+    return val;
+}
+
 /**
  * @return The text that is in the input box on this page
  */
 function getChannelNameFromForm() {
-    var form = document.getElementById("channelForm");
-    var val = form.elements["channelName"].value;
+    var val = getValueOfElementFromForm("channelName", "channelForm");
     if (val == null || val == "") { val = DEFAULT; }
     return val;
 }
@@ -84,6 +89,11 @@ function attachChannelListener(ref) {
     });
 }
 
+function submitTranslateForm() {
+    var val = getValueOfElementFromForm("textToTranslate", "translateForm");
+    document.getElementById("translation").innerHTML = translateStringToMorseCode(val);
+}
+
 /**
  * @param state True if channel is "ON"; false if channel is "OFF"
  */
@@ -106,12 +116,12 @@ function stopSound() {
 /*
 TODO
 
-play sound with incoming message
-CSS
-text to Morse code (find someone else's solution)
 Morse code to text diagram
 about/help
-Github + hosting
 option to use space bar on desktops
+investigate making the sound on mobile
+shelawang.me/m0rse/channelname links to channelname
+ribbon to show entered characters
+finish CSS
 
 */

@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="morse.js"></script>
     <script src="script.js"></script>
 
 </head>
@@ -36,7 +37,17 @@
 
     <div>
     <h3>Text to Morse Code</h3>
-    <p>TODO</p>
+    <form id="translateForm"
+        onsubmit="submitTranslateForm(); return false;">
+
+        <input type="text" name="textToTranslate"
+            placeholder="Enter text to translate"></input>
+        <button>Translate</button>
+
+    </form>
+
+    <h4>Translation</h4>
+    <p id="translation"></p>
     </div>
 
 </div>
