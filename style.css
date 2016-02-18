@@ -1,0 +1,66 @@
+#wrapper {
+    padding: 5em;
+}
+
+#channelStatus {
+    width: 3em;
+    height: 2em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+#theButton {
+    width: 5em;
+    height: 5em;
+    border-radius: 5em;
+    margin-bottom: 1em;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+
+
+/* http://codepen.io/simoncla/pen/uyIhr */
+
+button.example {
+    -webkit-transition: all 0s ease-out;
+    -moz-transition: all 0s ease-out;
+    -o-transition: all 0s ease-out;
+    -ms-transition: all 0s ease-out;
+    transition: all 0s ease-out;
+    height: 35px;
+    display: block;
+    font-family: Arial, "Helvetica", sans-serif;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+    padding: 4px 20px 0;
+    margin: 10px auto;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+button.pinterest {
+    border-left: solid 1px #C02B21;
+    background: #DE463B;
+
+    -webkit-box-shadow: 0px 5px 0px 0px #C02B21;
+    box-shadow: 0px 5px 0px 0px #C02B21;
+}
+
+button.example:active {
+    top: 3px;
+}
+
+button.pinterest:active {
+    -webkit-box-shadow: 0px 2px 0px 0px #C02B21;
+    box-shadow: 0px 2px 0px 0px #C02B21;
+}

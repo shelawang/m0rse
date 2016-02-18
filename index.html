@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>m0rse</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body onload="onLoad()">
+<div id="wrapper">
+
+    <center>
+
+    <div id="channelStatus">&nbsp;</div>
+
+    <button id="theButton" class="example pinterest"
+        onmousedown=buttonClicked()
+        onmouseup=buttonReleased()
+        onmouseleave=buttonReleased()>tap</button>
+
+    <form id="channelForm"
+        onsubmit="updateChannelWithNameOnForm(); return false;">
+
+        <input type="text" name="channelName"
+            placeholder="Enter channel name"
+            oninput="channelChanged()">
+        <button>Submit</button>
+
+    </form>
+
+    </center>
+
+    <div>
+    <h3>Text to Morse Code</h3>
+    <p>TODO</p>
+    </div>
+
+</div>
+</body>
+</html>
